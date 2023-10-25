@@ -1,3 +1,5 @@
+using System.Configuration;
+
 namespace Tracking_Comercial
 {
     internal static class Program

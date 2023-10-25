@@ -33,7 +33,7 @@
             label1 = new Label();
             label2 = new Label();
             txtU = new TextBox();
-            textBox2 = new TextBox();
+            txtC = new TextBox();
             SuspendLayout();
             // 
             // btnS
@@ -45,6 +45,7 @@
             btnS.TabIndex = 0;
             btnS.Text = "Salir";
             btnS.UseVisualStyleBackColor = true;
+            btnS.Click += btnS_Click;
             // 
             // btnL
             // 
@@ -55,6 +56,7 @@
             btnL.TabIndex = 1;
             btnL.Text = "Iniciar Sesion";
             btnL.UseVisualStyleBackColor = true;
+            btnL.Click += btnL_Click;
             // 
             // label1
             // 
@@ -85,32 +87,31 @@
             txtU.Size = new Size(169, 27);
             txtU.TabIndex = 4;
             // 
-            // textBox2
+            // txtC
             // 
-            textBox2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(127, 148);
-            textBox2.MaxLength = 20;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(169, 27);
-            textBox2.TabIndex = 5;
-            textBox2.UseSystemPasswordChar = true;
+            txtC.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            txtC.Location = new Point(127, 148);
+            txtC.MaxLength = 20;
+            txtC.Name = "txtC";
+            txtC.Size = new Size(169, 27);
+            txtC.TabIndex = 5;
+            txtC.UseSystemPasswordChar = true;
             // 
-            // Form1
+            // LogIn
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(484, 284);
             ControlBox = false;
-            Controls.Add(textBox2);
+            Controls.Add(txtC);
             Controls.Add(txtU);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnL);
             Controls.Add(btnS);
-            Enabled = false;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "Form1";
+            Name = "LogIn";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             ResumeLayout(false);
@@ -124,6 +125,6 @@
         private Label label1;
         private Label label2;
         private TextBox txtU;
-        private TextBox textBox2;
+        private TextBox txtC;
     }
 }
