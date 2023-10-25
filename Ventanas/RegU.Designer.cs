@@ -1,6 +1,6 @@
 ﻿namespace Tracking_Comercial.Ventanas
 {
-    partial class app
+    partial class RegU
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             SuspendLayout();
             // 
-            // app
+            // RegU
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Name = "app";
+            ClientSize = new Size(256, 450);
+            Name = "RegU";
             Text = "Form1";
             ResumeLayout(false);
         }

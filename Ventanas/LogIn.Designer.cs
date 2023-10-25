@@ -34,6 +34,7 @@
             label2 = new Label();
             txtU = new TextBox();
             txtC = new TextBox();
+            btnCU = new Button();
             SuspendLayout();
             // 
             // btnS
@@ -97,12 +98,24 @@
             txtC.TabIndex = 5;
             txtC.UseSystemPasswordChar = true;
             // 
+            // btnCU
+            // 
+            btnCU.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCU.Location = new Point(357, 206);
+            btnCU.Name = "btnCU";
+            btnCU.Size = new Size(115, 30);
+            btnCU.TabIndex = 6;
+            btnCU.Text = "Crear Usuario";
+            btnCU.UseVisualStyleBackColor = true;
+            btnCU.Click += btnCU_Click;
+            // 
             // LogIn
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(484, 284);
             ControlBox = false;
+            Controls.Add(btnCU);
             Controls.Add(txtC);
             Controls.Add(txtU);
             Controls.Add(label2);
@@ -126,5 +139,6 @@
         private Label label2;
         private TextBox txtU;
         private TextBox txtC;
+        private Button btnCU;
     }
 }

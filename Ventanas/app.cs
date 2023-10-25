@@ -16,5 +16,6 @@ namespace Tracking_Comercial.Ventanas
         {
             InitializeComponent();
         }
+
     }
 }

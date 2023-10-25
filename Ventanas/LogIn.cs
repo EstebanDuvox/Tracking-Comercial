@@ -1,5 +1,3 @@
-using System.Data;
-using Tracking_Comercial.SQL;
 using Tracking_Comercial.Ventanas;
 
 namespace Tracking_Comercial
@@ -13,12 +11,21 @@ namespace Tracking_Comercial
 
         private void btnL_Click(object sender, EventArgs e)
         {
-            AyC();
+            Hide();
+            txtU.Clear();
+            txtC.Clear();
+            app a = new app();
+            a.Show();
         }
 
         private void btnS_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnCU_Click(object sender, EventArgs e)
+        {
+
         }
 
         /*private void verificar()
@@ -39,14 +46,6 @@ namespace Tracking_Comercial
                 MessageBox.Show("Usuario y/o Contraseña no valido");
             }
         }*/
-
-        private void AyC()
-        {
-            Application.Run(new app());
-            Close();
-            txtU.Clear();
-            txtC.Clear();
-        }
 
     }
 }
