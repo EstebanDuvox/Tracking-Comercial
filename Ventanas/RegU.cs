@@ -5,15 +5,22 @@
         public RegU()
         {
             InitializeComponent();
-            if (txtU.TextLength<3 || txtC.TextLength < 8)
-            {
-                btnA.Enabled = false;
-            }else btnA.Enabled = true;
         }
 
         private void btnA_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (txtU.TextLength < 3 && txtC.TextLength < 8)
+            {
+                MessageBox.Show("Por favor ingresar datos validos.");
+            }
+            else if(txtU.Text == "ej:pepito" &&  txtC.Text == "ej:admin123")
+            {
+                MessageBox.Show("Por favor modifique los cuadros de texto " +
+                    ">:/");
+            }else
+            {
+                this.Close();
+            }
         }
 
         private void btnC_Click(object sender, EventArgs e)
@@ -24,14 +31,14 @@
         private void txtU_Click(object sender, EventArgs e)
         {
             txtU.Text = "";
-            txtU.ForeColor = Color.Black;
+            txtU.ForeColor = SystemColors.WindowText;
         }
 
         private void txtC_Click(object sender, EventArgs e)
         {
-            txtU.Text = "";
-            txtU.ForeColor = Color.Black;
-            txtU.UseSystemPasswordChar = true;
+            txtC.Text = "";
+            txtC.ForeColor = SystemColors.WindowText;
+            txtC.UseSystemPasswordChar = true;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Tracking_Comercial
 
         private void btnL_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             txtU.Clear();
             txtC.Clear();
             app a = new app();
@@ -25,7 +25,8 @@ namespace Tracking_Comercial
 
         private void btnCU_Click(object sender, EventArgs e)
         {
-
+            RegU cu = new RegU();
+            cu.Show();
         }
 
         /*private void verificar()

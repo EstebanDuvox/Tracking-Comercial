@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Tracking_Comercial.Ventanas
+﻿namespace Tracking_Comercial.Ventanas
 {
     public partial class app : Form
     {
@@ -17,5 +7,14 @@ namespace Tracking_Comercial.Ventanas
             InitializeComponent();
         }
 
+        private void app_Closing(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void tpEP_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

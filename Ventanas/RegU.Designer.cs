@@ -93,6 +93,7 @@
             // 
             // btnA
             // 
+            btnA.Enabled = false;
             btnA.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             btnA.Location = new Point(247, 394);
             btnA.Name = "btnA";
@@ -107,6 +108,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(334, 436);
+            ControlBox = false;
             Controls.Add(btnA);
             Controls.Add(btnC);
             Controls.Add(txtC);
@@ -114,7 +116,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "RegU";
-            Text = "Form1";
+            Text = "Registrarse";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -127,5 +129,7 @@
         private Label label1;
         private Button btnC;
         private Button btnA;
+        private HelpProvider helpProvider1;
+        private HelpProvider helpProvider2;
     }
 }

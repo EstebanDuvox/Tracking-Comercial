@@ -113,6 +113,8 @@
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
+            BackColor = SystemColors.AppWorkspace;
+            BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(484, 284);
             ControlBox = false;
             Controls.Add(btnCU);
@@ -122,6 +124,7 @@
             Controls.Add(label1);
             Controls.Add(btnL);
             Controls.Add(btnS);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "LogIn";
