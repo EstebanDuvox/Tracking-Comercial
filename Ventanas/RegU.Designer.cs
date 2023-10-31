@@ -129,7 +129,5 @@
         private Label label1;
         private Button btnC;
         private Button btnA;
-        private HelpProvider helpProvider1;
-        private HelpProvider helpProvider2;
     }
 }

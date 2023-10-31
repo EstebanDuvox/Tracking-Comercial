@@ -1,8 +1,8 @@
 ﻿namespace Tracking_Comercial.Ventanas
 {
-    public partial class app : Form
+    public partial class AppP : Form
     {
-        public app()
+        public AppP()
         {
             InitializeComponent();
         }

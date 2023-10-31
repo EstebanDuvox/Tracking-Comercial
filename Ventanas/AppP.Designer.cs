@@ -1,6 +1,6 @@
 ﻿namespace Tracking_Comercial.Ventanas
 {
-    partial class app
+    partial class AppP
     {
         /// <summary>
         /// Required designer variable.
