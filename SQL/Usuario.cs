@@ -68,7 +68,7 @@ namespace Tracking_Comercial.SQL
                 conectado();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = cc;
-                cmd.CommandText = $"Select * From usuarios;";
+                cmd.CommandText = "Select * From usuarios;";
                 if (cmd.ExecuteNonQuery() == -1)
                 {
                     MySqlDataAdapter da = new MySqlDataAdapter();
@@ -118,5 +118,38 @@ namespace Tracking_Comercial.SQL
             }
         }
 
+        public DataTable? buscar(string campo,string sol) 
+        {
+            try
+            {
+                conectado();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = cc;
+                cmd.CommandText = $"Select * From usuarios Where {campo}='{sol}';";
+                if (cmd.ExecuteNonQuery() == -1)
+                {
+                    MySqlDataAdapter da = new MySqlDataAdapter();
+                    DataTable dt = new DataTable();
+                    da.SelectCommand = cmd;
+                    da.Fill(dt);
+                    return dt;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                desconectado();
+            }
+        }
+
+        
     }
 }

@@ -1,4 +1,6 @@
-﻿using Tracking_Comercial.SQL;
+﻿using System.Collections.Specialized;
+using System.Data;
+using Tracking_Comercial.SQL;
 
 namespace Tracking_Comercial.Ventanas
 {
@@ -20,5 +22,19 @@ namespace Tracking_Comercial.Ventanas
             a.Show();
         }
 
+        private void tpU_Click(object sender, EventArgs e)
+        {
+            Usuario u = new Usuario();
+            DataTable dt = new DataTable();
+            dt = u.mostrar();
+            dgU.DataSource = dt;
+            cbU.DataSource = dt.AsEnumerable().Select(x => x[0].ToString()).ToList();
+        }
+
+        private void btnBU_Click(object sender, EventArgs e)
+        {
+            Usuario u = new Usuario();
+            u.buscar(cbU.Text, txtBU.Text);
+        }
     }
 }
