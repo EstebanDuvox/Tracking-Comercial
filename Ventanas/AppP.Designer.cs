@@ -30,51 +30,38 @@
         {
             tabControl1 = new TabControl();
             tpMP = new TabPage();
-            button4 = new Button();
-            comboBox1 = new ComboBox();
-            textBox1 = new TextBox();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
-            dataGridView1 = new DataGridView();
-            idp = new DataGridViewTextBoxColumn();
-            cl = new DataGridViewTextBoxColumn();
-            nc = new DataGridViewTextBoxColumn();
-            apC = new DataGridViewTextBoxColumn();
-            desc = new DataGridViewTextBoxColumn();
-            ETS = new DataGridViewTextBoxColumn();
-            RT = new DataGridViewTextBoxColumn();
-            RE = new DataGridViewTextBoxColumn();
-            EP = new DataGridViewTextBoxColumn();
-            DP = new DataGridViewTextBoxColumn();
-            PTP = new DataGridViewTextBoxColumn();
+            btnBP = new Button();
+            cbP = new ComboBox();
+            txtBP = new TextBox();
+            btnEP = new Button();
+            btnMP = new Button();
+            btnAP = new Button();
+            dgP = new DataGridView();
             tpEP = new TabPage();
             tpGP = new TabPage();
             tpP = new TabPage();
             tpU = new TabPage();
-            button5 = new Button();
-            comboBox2 = new ComboBox();
-            textBox2 = new TextBox();
-            button6 = new Button();
-            button7 = new Button();
-            button8 = new Button();
-            dataGridView2 = new DataGridView();
-            idpros = new DataGridViewTextBoxColumn();
-            Pros = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn11 = new DataGridViewTextBoxColumn();
+            btnBU = new Button();
+            cbU = new ComboBox();
+            txtBU = new TextBox();
+            btnEU = new Button();
+            btnMU = new Button();
+            btnAU = new Button();
+            dgU = new DataGridView();
+            btnBPe = new Button();
+            cbPe = new ComboBox();
+            txtBPe = new TextBox();
+            btnEPe = new Button();
+            btnMPe = new Button();
+            btnAPe = new Button();
+            dgPe = new DataGridView();
             tabControl1.SuspendLayout();
             tpMP.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            tpEP.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgP).BeginInit();
+            tpP.SuspendLayout();
+            tpU.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgU).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgPe).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -92,13 +79,13 @@
             // 
             // tpMP
             // 
-            tpMP.Controls.Add(button4);
-            tpMP.Controls.Add(comboBox1);
-            tpMP.Controls.Add(textBox1);
-            tpMP.Controls.Add(button3);
-            tpMP.Controls.Add(button2);
-            tpMP.Controls.Add(button1);
-            tpMP.Controls.Add(dataGridView1);
+            tpMP.Controls.Add(btnBP);
+            tpMP.Controls.Add(cbP);
+            tpMP.Controls.Add(txtBP);
+            tpMP.Controls.Add(btnEP);
+            tpMP.Controls.Add(btnMP);
+            tpMP.Controls.Add(btnAP);
+            tpMP.Controls.Add(dgP);
             tpMP.Location = new Point(4, 24);
             tpMP.Name = "tpMP";
             tpMP.Padding = new Padding(3);
@@ -107,133 +94,72 @@
             tpMP.Text = "Prospecto";
             tpMP.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnBP
             // 
-            button4.Location = new Point(693, 7);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 6;
-            button4.Text = "Buscar";
-            button4.UseVisualStyleBackColor = true;
+            btnBP.Location = new Point(693, 7);
+            btnBP.Name = "btnBP";
+            btnBP.Size = new Size(75, 23);
+            btnBP.TabIndex = 6;
+            btnBP.Text = "Buscar";
+            btnBP.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cbP
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "id_proyecto", "Cliente", "Nombre_com", "Apellido_Com", "Descripcion", "Esp_Tec_Sol", "Restr_tiempo", "Restr_eco", "Estado_pros", "Doc", "Propuesta_T" });
-            comboBox1.Location = new Point(566, 6);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 5;
-            comboBox1.Text = "id_proyecto";
+            cbP.FormattingEnabled = true;
+            cbP.Location = new Point(566, 6);
+            cbP.Name = "cbP";
+            cbP.Size = new Size(121, 23);
+            cbP.TabIndex = 5;
             // 
-            // textBox1
+            // txtBP
             // 
-            textBox1.Location = new Point(566, 35);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(202, 23);
-            textBox1.TabIndex = 4;
+            txtBP.Location = new Point(566, 35);
+            txtBP.Name = "txtBP";
+            txtBP.Size = new Size(202, 23);
+            txtBP.TabIndex = 4;
             // 
-            // button3
+            // btnEP
             // 
-            button3.Location = new Point(89, 35);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 3;
-            button3.Text = "Eliminar";
-            button3.UseVisualStyleBackColor = true;
+            btnEP.Location = new Point(89, 35);
+            btnEP.Name = "btnEP";
+            btnEP.Size = new Size(75, 23);
+            btnEP.TabIndex = 3;
+            btnEP.Text = "Eliminar";
+            btnEP.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnMP
             // 
-            button2.Location = new Point(8, 35);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 2;
-            button2.Text = "Modificar";
-            button2.UseVisualStyleBackColor = true;
+            btnMP.Location = new Point(8, 35);
+            btnMP.Name = "btnMP";
+            btnMP.Size = new Size(75, 23);
+            btnMP.TabIndex = 2;
+            btnMP.Text = "Modificar";
+            btnMP.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnAP
             // 
-            button1.Location = new Point(8, 6);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "Agregar";
-            button1.UseVisualStyleBackColor = true;
+            btnAP.Location = new Point(8, 6);
+            btnAP.Name = "btnAP";
+            btnAP.Size = new Size(75, 23);
+            btnAP.TabIndex = 1;
+            btnAP.Text = "Agregar";
+            btnAP.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgP
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idp, cl, nc, apC, desc, ETS, RT, RE, EP, DP, PTP });
-            dataGridView1.Location = new Point(8, 64);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(760, 363);
-            dataGridView1.TabIndex = 0;
-            // 
-            // idp
-            // 
-            idp.HeaderText = "id_proyecto";
-            idp.Name = "idp";
-            // 
-            // cl
-            // 
-            cl.HeaderText = "Cliente";
-            cl.Name = "cl";
-            // 
-            // nc
-            // 
-            nc.HeaderText = "Nombre_com";
-            nc.Name = "nc";
-            // 
-            // apC
-            // 
-            apC.HeaderText = "Apellido_Com";
-            apC.Name = "apC";
-            // 
-            // desc
-            // 
-            desc.HeaderText = "Descripcion";
-            desc.Name = "desc";
-            // 
-            // ETS
-            // 
-            ETS.HeaderText = "Esp_Tec_Sol";
-            ETS.Name = "ETS";
-            // 
-            // RT
-            // 
-            RT.HeaderText = "Restr_tiempo";
-            RT.Name = "RT";
-            // 
-            // RE
-            // 
-            RE.HeaderText = "Restr_eco";
-            RE.Name = "RE";
-            // 
-            // EP
-            // 
-            EP.HeaderText = "Estado_pros";
-            EP.Name = "EP";
-            // 
-            // DP
-            // 
-            DP.HeaderText = "Doc";
-            DP.Name = "DP";
-            // 
-            // PTP
-            // 
-            PTP.HeaderText = "Propuesta_T";
-            PTP.Name = "PTP";
+            dgP.AllowUserToAddRows = false;
+            dgP.AllowUserToDeleteRows = false;
+            dgP.AllowUserToOrderColumns = true;
+            dgP.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgP.Location = new Point(8, 64);
+            dgP.Name = "dgP";
+            dgP.ReadOnly = true;
+            dgP.RowTemplate.Height = 25;
+            dgP.Size = new Size(760, 363);
+            dgP.TabIndex = 0;
             // 
             // tpEP
             // 
-            tpEP.Controls.Add(button5);
-            tpEP.Controls.Add(comboBox2);
-            tpEP.Controls.Add(textBox2);
-            tpEP.Controls.Add(button6);
-            tpEP.Controls.Add(button7);
-            tpEP.Controls.Add(button8);
-            tpEP.Controls.Add(dataGridView2);
             tpEP.Location = new Point(4, 24);
             tpEP.Name = "tpEP";
             tpEP.Padding = new Padding(3);
@@ -241,7 +167,6 @@
             tpEP.TabIndex = 1;
             tpEP.Text = "Estados";
             tpEP.UseVisualStyleBackColor = true;
-            tpEP.Click += tpEP_Click;
             // 
             // tpGP
             // 
@@ -254,6 +179,13 @@
             // 
             // tpP
             // 
+            tpP.Controls.Add(btnBPe);
+            tpP.Controls.Add(cbPe);
+            tpP.Controls.Add(txtBPe);
+            tpP.Controls.Add(btnEPe);
+            tpP.Controls.Add(btnMPe);
+            tpP.Controls.Add(btnAPe);
+            tpP.Controls.Add(dgPe);
             tpP.Location = new Point(4, 24);
             tpP.Name = "tpP";
             tpP.Size = new Size(776, 433);
@@ -263,6 +195,13 @@
             // 
             // tpU
             // 
+            tpU.Controls.Add(btnBU);
+            tpU.Controls.Add(cbU);
+            tpU.Controls.Add(txtBU);
+            tpU.Controls.Add(btnEU);
+            tpU.Controls.Add(btnMU);
+            tpU.Controls.Add(btnAU);
+            tpU.Controls.Add(dgU);
             tpU.Location = new Point(4, 24);
             tpU.Name = "tpU";
             tpU.Size = new Size(776, 433);
@@ -270,140 +209,154 @@
             tpU.Text = "Usuarios";
             tpU.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnBU
             // 
-            button5.Location = new Point(693, 7);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 23);
-            button5.TabIndex = 13;
-            button5.Text = "Buscar";
-            button5.UseVisualStyleBackColor = true;
+            btnBU.Location = new Point(693, 7);
+            btnBU.Name = "btnBU";
+            btnBU.Size = new Size(75, 23);
+            btnBU.TabIndex = 13;
+            btnBU.Text = "Buscar";
+            btnBU.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // cbU
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "id_proyecto", "Cliente", "Nombre_com", "Apellido_Com", "Descripcion", "Esp_Tec_Sol", "Restr_tiempo", "Restr_eco", "Estado_pros", "Doc", "Propuesta_T" });
-            comboBox2.Location = new Point(566, 6);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 12;
-            comboBox2.Text = "id_proyecto";
+            cbU.FormattingEnabled = true;
+            cbU.Location = new Point(566, 6);
+            cbU.Name = "cbU";
+            cbU.Size = new Size(121, 23);
+            cbU.TabIndex = 12;
             // 
-            // textBox2
+            // txtBU
             // 
-            textBox2.Location = new Point(566, 35);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(202, 23);
-            textBox2.TabIndex = 11;
+            txtBU.Location = new Point(566, 35);
+            txtBU.Name = "txtBU";
+            txtBU.Size = new Size(202, 23);
+            txtBU.TabIndex = 11;
             // 
-            // button6
+            // btnEU
             // 
-            button6.Location = new Point(89, 35);
-            button6.Name = "button6";
-            button6.Size = new Size(75, 23);
-            button6.TabIndex = 10;
-            button6.Text = "Eliminar";
-            button6.UseVisualStyleBackColor = true;
+            btnEU.Location = new Point(89, 35);
+            btnEU.Name = "btnEU";
+            btnEU.Size = new Size(75, 23);
+            btnEU.TabIndex = 10;
+            btnEU.Text = "Eliminar";
+            btnEU.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnMU
             // 
-            button7.Location = new Point(8, 35);
-            button7.Name = "button7";
-            button7.Size = new Size(75, 23);
-            button7.TabIndex = 9;
-            button7.Text = "Modificar";
-            button7.UseVisualStyleBackColor = true;
+            btnMU.Location = new Point(8, 35);
+            btnMU.Name = "btnMU";
+            btnMU.Size = new Size(75, 23);
+            btnMU.TabIndex = 9;
+            btnMU.Text = "Modificar";
+            btnMU.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnAU
             // 
-            button8.Location = new Point(8, 6);
-            button8.Name = "button8";
-            button8.Size = new Size(75, 23);
-            button8.TabIndex = 8;
-            button8.Text = "Agregar";
-            button8.UseVisualStyleBackColor = true;
+            btnAU.Location = new Point(8, 6);
+            btnAU.Name = "btnAU";
+            btnAU.Size = new Size(75, 23);
+            btnAU.TabIndex = 8;
+            btnAU.Text = "Agregar";
+            btnAU.UseVisualStyleBackColor = true;
+            btnAU.Click += btnAU_Click;
             // 
-            // dataGridView2
+            // dgU
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { idpros, Pros, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9, dataGridViewTextBoxColumn10, dataGridViewTextBoxColumn11 });
-            dataGridView2.Location = new Point(8, 64);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(760, 363);
-            dataGridView2.TabIndex = 7;
+            dgU.AllowUserToAddRows = false;
+            dgU.AllowUserToDeleteRows = false;
+            dgU.AllowUserToOrderColumns = true;
+            dgU.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgU.Location = new Point(8, 64);
+            dgU.Name = "dgU";
+            dgU.ReadOnly = true;
+            dgU.RowTemplate.Height = 25;
+            dgU.Size = new Size(760, 363);
+            dgU.TabIndex = 7;
             // 
-            // idpros
+            // btnBPe
             // 
-            idpros.HeaderText = "id_prospecto";
-            idpros.Name = "idpros";
+            btnBPe.Location = new Point(693, 7);
+            btnBPe.Name = "btnBPe";
+            btnBPe.Size = new Size(75, 23);
+            btnBPe.TabIndex = 20;
+            btnBPe.Text = "Buscar";
+            btnBPe.UseVisualStyleBackColor = true;
             // 
-            // Pros
+            // cbPe
             // 
-            Pros.HeaderText = "Prospecto";
-            Pros.Name = "Pros";
+            cbPe.FormattingEnabled = true;
+            cbPe.Location = new Point(566, 6);
+            cbPe.Name = "cbPe";
+            cbPe.Size = new Size(121, 23);
+            cbPe.TabIndex = 19;
             // 
-            // dataGridViewTextBoxColumn3
+            // txtBPe
             // 
-            dataGridViewTextBoxColumn3.HeaderText = "Nombre_com";
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            txtBPe.Location = new Point(566, 35);
+            txtBPe.Name = "txtBPe";
+            txtBPe.Size = new Size(202, 23);
+            txtBPe.TabIndex = 18;
             // 
-            // dataGridViewTextBoxColumn4
+            // btnEPe
             // 
-            dataGridViewTextBoxColumn4.HeaderText = "Apellido_Com";
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            btnEPe.Location = new Point(89, 35);
+            btnEPe.Name = "btnEPe";
+            btnEPe.Size = new Size(75, 23);
+            btnEPe.TabIndex = 17;
+            btnEPe.Text = "Eliminar";
+            btnEPe.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTextBoxColumn5
+            // btnMPe
             // 
-            dataGridViewTextBoxColumn5.HeaderText = "Descripcion";
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            btnMPe.Location = new Point(8, 35);
+            btnMPe.Name = "btnMPe";
+            btnMPe.Size = new Size(75, 23);
+            btnMPe.TabIndex = 16;
+            btnMPe.Text = "Modificar";
+            btnMPe.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTextBoxColumn6
+            // btnAPe
             // 
-            dataGridViewTextBoxColumn6.HeaderText = "Esp_Tec_Sol";
-            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            btnAPe.Location = new Point(8, 6);
+            btnAPe.Name = "btnAPe";
+            btnAPe.Size = new Size(75, 23);
+            btnAPe.TabIndex = 15;
+            btnAPe.Text = "Agregar";
+            btnAPe.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTextBoxColumn7
+            // dgPe
             // 
-            dataGridViewTextBoxColumn7.HeaderText = "Restr_tiempo";
-            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            dgPe.AllowUserToAddRows = false;
+            dgPe.AllowUserToDeleteRows = false;
+            dgPe.AllowUserToOrderColumns = true;
+            dgPe.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgPe.Location = new Point(8, 64);
+            dgPe.Name = "dgPe";
+            dgPe.ReadOnly = true;
+            dgPe.RowTemplate.Height = 25;
+            dgPe.Size = new Size(760, 363);
+            dgPe.TabIndex = 14;
             // 
-            // dataGridViewTextBoxColumn8
-            // 
-            dataGridViewTextBoxColumn8.HeaderText = "Restr_eco";
-            dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            dataGridViewTextBoxColumn9.HeaderText = "Estado_pros";
-            dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            dataGridViewTextBoxColumn10.HeaderText = "Doc";
-            dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            dataGridViewTextBoxColumn11.HeaderText = "Propuesta_T";
-            dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // app
+            // AppP
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(784, 461);
             Controls.Add(tabControl1);
-            Name = "app";
+            Name = "AppP";
             Text = "Form1";
             FormClosing += app_Closing;
             tabControl1.ResumeLayout(false);
             tpMP.ResumeLayout(false);
             tpMP.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            tpEP.ResumeLayout(false);
-            tpEP.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgP).EndInit();
+            tpP.ResumeLayout(false);
+            tpP.PerformLayout();
+            tpU.ResumeLayout(false);
+            tpU.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgU).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgPe).EndInit();
             ResumeLayout(false);
         }
 
@@ -415,41 +368,26 @@
         private TabPage tpGP;
         private TabPage tpP;
         private TabPage tpU;
-        private DataGridView dataGridView1;
-        private Button button4;
-        private ComboBox comboBox1;
-        private TextBox textBox1;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private DataGridViewTextBoxColumn idp;
-        private DataGridViewTextBoxColumn cl;
-        private DataGridViewTextBoxColumn nc;
-        private DataGridViewTextBoxColumn apC;
-        private DataGridViewTextBoxColumn desc;
-        private DataGridViewTextBoxColumn ETS;
-        private DataGridViewTextBoxColumn RT;
-        private DataGridViewTextBoxColumn RE;
-        private DataGridViewTextBoxColumn EP;
-        private DataGridViewTextBoxColumn DP;
-        private DataGridViewTextBoxColumn PTP;
-        private Button button5;
-        private ComboBox comboBox2;
-        private TextBox textBox2;
-        private Button button6;
-        private Button button7;
-        private Button button8;
-        private DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn idpros;
-        private DataGridViewTextBoxColumn Pros;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private DataGridView dgP;
+        private Button btnBP;
+        private ComboBox cbP;
+        private TextBox txtBP;
+        private Button btnEP;
+        private Button btnMP;
+        private Button btnAP;
+        private Button btnBU;
+        private ComboBox cbU;
+        private TextBox txtBU;
+        private Button btnEU;
+        private Button btnMU;
+        private Button btnAU;
+        private DataGridView dgU;
+        private Button btnBPe;
+        private ComboBox cbPe;
+        private TextBox txtBPe;
+        private Button btnEPe;
+        private Button btnMPe;
+        private Button btnAPe;
+        private DataGridView dgPe;
     }
 }

@@ -1,10 +1,10 @@
-﻿using System.Data.SqlClient;
+﻿using MySql.Data.MySqlClient;
 
 namespace Tracking_Comercial.SQL
 {
     internal class Conexiones : Para
     {
-        protected SqlConnection cc;
+        protected MySqlConnection cc;
         public int id_usuario;
 
         public dynamic conectado()
@@ -12,8 +12,8 @@ namespace Tracking_Comercial.SQL
             try
             {
                 Para opara = new Para();
-                opara.Conexion = "Server=127.0.0.1;Database=tc;User Id=root; Password=;";
-                cc = new SqlConnection(opara.Conexion);
+                opara.Conexion = "Server='127.0.0.1';Database='tc';User Id=root; Password='';";
+                cc = new MySqlConnection(opara.Conexion);
                 cc.Open();
                 return true;
             }
