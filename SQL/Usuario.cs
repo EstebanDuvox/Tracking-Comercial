@@ -194,6 +194,5 @@ namespace Tracking_Comercial.SQL
                 desconectado();
             }
         }
-
     }
 }
