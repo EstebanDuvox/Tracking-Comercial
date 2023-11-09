@@ -1,4 +1,5 @@
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Tracking_Comercial.SQL
 {
@@ -119,13 +120,13 @@ namespace Tracking_Comercial.SQL
         }
 
         
-        public DataTable? Actualizar(int cant, string c1, string d1, string c2,string d2, string c3, string d3)
+        public void Actualizar(int cant, string c1, string d1, string c2,string d2, string c3, string d3)
         {
             try
             {
                 conectado();
                 MySqlCommand cmd = new MySqlCommand();
-                cmd.connection = cc;
+                cmd.Connection = cc;
                 if (cant == 1)
                 {
                     cmd.CommandText = $"Update prospectos Set {c1}='{d1}';";
@@ -136,7 +137,7 @@ namespace Tracking_Comercial.SQL
                 {
                     cmd.CommandText = $"Update prospectos Set {c1}='{d1}',{c2}='{d2}',{c3}='{d3}';";
                 }
-                if (cmd.ExecuteNonQuery != -1)
+                if (cmd.ExecuteNonQuery() != -1)
                 {
                     MySqlDataAdapter da = new MySqlDataAdapter();
                     da.UpdateCommand = cmd;
@@ -145,20 +146,9 @@ namespace Tracking_Comercial.SQL
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                return null;
             }finally
             {
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.Connection = cc;
-                cmd.CommandText = "Select * From prospectos;";
-                if (cmd.ExecuteNonQuery() == -1)
-                {
-                    MySqlDataAdapter da = new MySqlDataAdapter();
-                    DataTable dt = new DataTable();
-                    da.SelectCommand = cmd;
-                    da.Fill(dt);
-                    return dt;
-                }
+                mostrar();
                 desconectado();
             }
         }  
