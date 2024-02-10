@@ -347,7 +347,7 @@
             ClientSize = new Size(784, 461);
             Controls.Add(tabControl1);
             Name = "AppP";
-            Text = "Form1";
+            Text = "Prospectos Alcachofa";
             FormClosing += app_Closing;
             tabControl1.ResumeLayout(false);
             tpMP.ResumeLayout(false);

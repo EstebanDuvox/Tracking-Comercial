@@ -29,7 +29,7 @@ namespace Tracking_Comercial.Ventanas
 
         private void btnA_Click(object sender, EventArgs e)
         {
-            if (txtU.TextLength < 3 && txtC.TextLength < 8)
+            if (txtU.TextLength < 3 || txtC.TextLength < 8 || txtU.TextLength > 20 || txtC.TextLength > 25)
             {
                 MessageBox.Show("Por favor ingresar datos validos.");
             }
