@@ -21,5 +21,26 @@ namespace Tracking_Comercial.Formularios.Secundarios
             cbU.DataSource = u.listU();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            Usuario u = new Usuario();
+            u.modificar(cbU.Text, txtC.Text, cbTU.Text, chC.Checked, chTU.Checked);
+            this.Close();
+        }
+
+        private void chC_CheckedChanged(object sender, EventArgs e)
+        {
+            txtC.Enabled = true;
+        }
+
+        private void chTU_CheckedChanged(object sender, EventArgs e)
+        {
+            cbTU.Enabled = true;
+        }
     }
 }

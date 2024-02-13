@@ -13,7 +13,7 @@ namespace Tracking_Comercial.Ventanas
 
         private void app_Closing(object sender, EventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            Application.Exit();
         }
 
         private void btnAU_Click(object sender, EventArgs e)
@@ -35,6 +35,12 @@ namespace Tracking_Comercial.Ventanas
         {
             Usuario u = new Usuario();
             u.buscar(cbU.Text, txtBU.Text);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LogIn.ActiveForm.Show();
+            this.Close();
         }
     }
 }

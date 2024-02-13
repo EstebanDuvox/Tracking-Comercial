@@ -55,6 +55,9 @@
             btnMU = new Button();
             btnAU = new Button();
             dgU = new DataGridView();
+            button1 = new Button();
+            groupBox1 = new GroupBox();
+            groupBox2 = new GroupBox();
             tabControl1.SuspendLayout();
             tpMP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgP).BeginInit();
@@ -62,19 +65,22 @@
             ((System.ComponentModel.ISupportInitialize)dgPe).BeginInit();
             tpU.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgU).BeginInit();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
             // 
+            tabControl1.Controls.Add(tpGP);
             tabControl1.Controls.Add(tpMP);
             tabControl1.Controls.Add(tpEP);
-            tabControl1.Controls.Add(tpGP);
             tabControl1.Controls.Add(tpP);
             tabControl1.Controls.Add(tpU);
-            tabControl1.Location = new Point(0, 0);
+            tabControl1.Enabled = false;
+            tabControl1.Location = new Point(0, 2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(784, 461);
+            tabControl1.Size = new Size(784, 459);
             tabControl1.TabIndex = 1;
             // 
             // tpMP
@@ -89,7 +95,7 @@
             tpMP.Location = new Point(4, 24);
             tpMP.Name = "tpMP";
             tpMP.Padding = new Padding(3);
-            tpMP.Size = new Size(776, 433);
+            tpMP.Size = new Size(776, 431);
             tpMP.TabIndex = 0;
             tpMP.Text = "Prospecto";
             tpMP.UseVisualStyleBackColor = true;
@@ -163,7 +169,7 @@
             tpEP.Location = new Point(4, 24);
             tpEP.Name = "tpEP";
             tpEP.Padding = new Padding(3);
-            tpEP.Size = new Size(776, 433);
+            tpEP.Size = new Size(776, 431);
             tpEP.TabIndex = 1;
             tpEP.Text = "Estados";
             tpEP.UseVisualStyleBackColor = true;
@@ -172,7 +178,7 @@
             // 
             tpGP.Location = new Point(4, 24);
             tpGP.Name = "tpGP";
-            tpGP.Size = new Size(776, 433);
+            tpGP.Size = new Size(776, 431);
             tpGP.TabIndex = 2;
             tpGP.Text = "Gestion";
             tpGP.UseVisualStyleBackColor = true;
@@ -188,7 +194,7 @@
             tpP.Controls.Add(dgPe);
             tpP.Location = new Point(4, 24);
             tpP.Name = "tpP";
-            tpP.Size = new Size(776, 433);
+            tpP.Size = new Size(776, 431);
             tpP.TabIndex = 4;
             tpP.Text = "Perfiles";
             tpP.UseVisualStyleBackColor = true;
@@ -259,16 +265,12 @@
             // 
             // tpU
             // 
-            tpU.Controls.Add(btnBU);
-            tpU.Controls.Add(cbU);
-            tpU.Controls.Add(txtBU);
-            tpU.Controls.Add(btnEU);
-            tpU.Controls.Add(btnMU);
-            tpU.Controls.Add(btnAU);
+            tpU.Controls.Add(groupBox2);
+            tpU.Controls.Add(groupBox1);
             tpU.Controls.Add(dgU);
             tpU.Location = new Point(4, 24);
             tpU.Name = "tpU";
-            tpU.Size = new Size(776, 433);
+            tpU.Size = new Size(776, 431);
             tpU.TabIndex = 3;
             tpU.Text = "Usuarios";
             tpU.UseVisualStyleBackColor = true;
@@ -276,7 +278,7 @@
             // 
             // btnBU
             // 
-            btnBU.Location = new Point(693, 7);
+            btnBU.Location = new Point(199, 11);
             btnBU.Name = "btnBU";
             btnBU.Size = new Size(75, 23);
             btnBU.TabIndex = 13;
@@ -287,21 +289,21 @@
             // cbU
             // 
             cbU.FormattingEnabled = true;
-            cbU.Location = new Point(566, 6);
+            cbU.Location = new Point(72, 12);
             cbU.Name = "cbU";
             cbU.Size = new Size(121, 23);
             cbU.TabIndex = 12;
             // 
             // txtBU
             // 
-            txtBU.Location = new Point(566, 35);
+            txtBU.Location = new Point(72, 42);
             txtBU.Name = "txtBU";
             txtBU.Size = new Size(202, 23);
             txtBU.TabIndex = 11;
             // 
             // btnEU
             // 
-            btnEU.Location = new Point(89, 35);
+            btnEU.Location = new Point(85, 41);
             btnEU.Name = "btnEU";
             btnEU.Size = new Size(75, 23);
             btnEU.TabIndex = 10;
@@ -310,7 +312,7 @@
             // 
             // btnMU
             // 
-            btnMU.Location = new Point(8, 35);
+            btnMU.Location = new Point(4, 41);
             btnMU.Name = "btnMU";
             btnMU.Size = new Size(75, 23);
             btnMU.TabIndex = 9;
@@ -319,7 +321,7 @@
             // 
             // btnAU
             // 
-            btnAU.Location = new Point(8, 6);
+            btnAU.Location = new Point(4, 12);
             btnAU.Name = "btnAU";
             btnAU.Size = new Size(75, 23);
             btnAU.TabIndex = 8;
@@ -333,18 +335,54 @@
             dgU.AllowUserToDeleteRows = false;
             dgU.AllowUserToOrderColumns = true;
             dgU.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgU.Location = new Point(8, 64);
+            dgU.Location = new Point(8, 77);
             dgU.Name = "dgU";
             dgU.ReadOnly = true;
             dgU.RowTemplate.Height = 25;
-            dgU.Size = new Size(760, 363);
+            dgU.Size = new Size(760, 350);
             dgU.TabIndex = 7;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(695, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(85, 23);
+            button1.TabIndex = 2;
+            button1.Text = "Cerrar Sesion";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(btnEU);
+            groupBox1.Controls.Add(btnMU);
+            groupBox1.Controls.Add(btnAU);
+            groupBox1.Location = new Point(4, 1);
+            groupBox1.Name = "groupBox1";
+            groupBox1.RightToLeft = RightToLeft.Yes;
+            groupBox1.Size = new Size(480, 70);
+            groupBox1.TabIndex = 14;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Gestion";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(txtBU);
+            groupBox2.Controls.Add(cbU);
+            groupBox2.Controls.Add(btnBU);
+            groupBox2.Location = new Point(490, 1);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(278, 70);
+            groupBox2.TabIndex = 15;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Buscar";
             // 
             // AppP
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(784, 461);
+            Controls.Add(button1);
             Controls.Add(tabControl1);
             Name = "AppP";
             Text = "Prospectos Alcachofa";
@@ -357,8 +395,10 @@
             tpP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgPe).EndInit();
             tpU.ResumeLayout(false);
-            tpU.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgU).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -396,5 +436,8 @@
         private Button btnMPe;
         private Button btnAPe;
         private DataGridView dgPe;
+        private Button button1;
+        private GroupBox groupBox2;
+        private GroupBox groupBox1;
     }
 }

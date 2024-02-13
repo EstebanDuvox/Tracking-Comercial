@@ -1,86 +1,28 @@
-﻿using System.Data;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Tracking_Comercial.SQL
 {
-    internal class Usuario : Conexiones
-    { //Heredo la clase de conexiones
-
-        public List<string>? listU()
+    internal class Perfil : Conexiones
+    {
+        public void crear(string emp, string nomc, string apc)
         {
             try
             {
                 conectado();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = cc;
-                cmd.CommandText = "Select Nom_U from usuarios";
-                MySqlDataAdapter da = new MySqlDataAdapter();
-                DataTable dt = new DataTable();
-                da.SelectCommand = cmd;
-                da.Fill(dt);
-                List<string> lu = dt.AsEnumerable().Select(x => x[0].ToString()).ToList();
-                if (cmd.ExecuteNonQuery() == -1)
-                {
-                    return lu;
-                }
-                else { return null; }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return null;
-            }
-            finally
-            {
-                desconectado();
-            }
-        }
-
-        public DataTable? ingresar(string user, string pass)
-        {
-            try
-            {
-                conectado();
-                MySqlCommand cmd = new MySqlCommand(); //declaro variable para el comando a ejecutar
-                cmd.Connection = cc;
-                cmd.CommandText = $"Select * From usuarios Where Nom_U='{user}' or Con_U='{pass}';";
-                MySqlDataAdapter da = new MySqlDataAdapter();
-                DataTable dt = new DataTable();
-                da.SelectCommand = cmd;
-                da.Fill(dt);
-                if (cmd.ExecuteNonQuery() == -1)
-                {
-                    return dt;
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return null;
-            }
-            finally
-            {
-                desconectado();
-            }
-        }
-
-        public void crear(string user, string pass)
-        {
-            try
-            {
-                conectado();
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.Connection = cc;
-                cmd.CommandText = $"Insert into usuarios (Nom_U,Con_U) values ('{user}','{pass}');";
+                cmd.CommandText = $"Insert into perfiles (nom_E,nom_C,ap_C) values ('{emp}','{nomc}','{apc}');";
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.InsertCommand = cmd;
                 if (cmd.ExecuteNonQuery() != -1)
                 {
-                    MessageBox.Show($"El usuario {user}. Fue creado con exito");
+                    MessageBox.Show($"El comercial {emp}. Fue creado con exito");
                 }
             }
             catch (Exception ex)
@@ -100,7 +42,7 @@ namespace Tracking_Comercial.SQL
                 conectado();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = cc;
-                cmd.CommandText = "Select * From usuarios;";
+                cmd.CommandText = "Select * From perfiles;";
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 DataTable dt = new DataTable();
                 da.SelectCommand = cmd;
@@ -132,12 +74,12 @@ namespace Tracking_Comercial.SQL
                 conectado();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = cc;
-                cmd.CommandText = $"Delete from usuarios Where Nom_U='{id}'";
-                MySqlDataAdapter da = new MySqlDataAdapter();
-                da.DeleteCommand = cmd;
+                cmd.CommandText = $"Delete from perfiles Where id_perfil='{id}'";
                 if (cmd.ExecuteNonQuery() != -1)
                 {
-                    MessageBox.Show($"El usuario '{id}' fue eliminado con exito");
+                    MySqlDataAdapter da = new MySqlDataAdapter();
+                    da.DeleteCommand = cmd;
+                    MessageBox.Show($"La empresa '{id}' fue eliminado con exito");
                 }
             }
             catch (Exception ex)
@@ -157,7 +99,7 @@ namespace Tracking_Comercial.SQL
                 conectado();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = cc;
-                cmd.CommandText = $"Select * From usuarios Where {campo}='{sol}';";
+                cmd.CommandText = $"Select * From perfiles Where {campo}='{sol}';";
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 DataTable dt = new DataTable();
                 da.SelectCommand = cmd;
@@ -182,24 +124,40 @@ namespace Tracking_Comercial.SQL
             }
         }
 
-        public void modificar(string id, string txt1, string txt2, bool cb1, bool cb2)
+        public void modificar(int id, string txt1, string txt2, string txt3, bool ch1, bool ch2, bool ch3)
         {
             try
             {
                 conectado();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = cc;
-                if (cb1 == true && cb2 == false)
+                if (ch1 == true && ch2 == false && ch3 == false)
                 {
-                    cmd.CommandText = $"Update usuarios set Con_U='{txt1}' Where Nom_U='{id}';";
+                    cmd.CommandText = $"Update perfiles set nom_E='{txt1}' Where id_perfil='{id}';";
                 }
-                else if (cb1 == true && cb2 == true)
+                else if (ch1 == true && ch2 == true && ch3 == false)
                 {
-                    cmd.CommandText = $"Update usuarios set Con_U='{txt1}',Tipo_U='{txt2}' Where Nom_U='{id}';";
+                    cmd.CommandText = $"Update perfiles set nom_E='{txt1}',nom_C='{txt2}' Where id_perfil='{id}';";
                 }
-                else if (cb1 == false && cb2 == true)
+                else if (ch1 == true && ch2 == false && ch3 == true)
                 {
-                    cmd.CommandText = $"Update usuarios set Tipo_U='{txt2}' Where Nom_U='{id}'";
+                    cmd.CommandText = $"Update perfiles set nom_E'{txt1}',ap_C='{txt3}' Where id";
+                }
+                else if (ch1 == true && ch2 == true && ch3 == true)
+                {
+                    cmd.CommandText = $"Update perfiles set nom_E='{txt1}',nom_C='{txt2}',ap_C='{txt3}' Where id_perfil='{id}';";
+                }
+                else if (ch1 == false && ch2 == true && ch3 == false)
+                {
+                    cmd.CommandText = $"Update perfiles set nom_C='{txt2}' Where id_perfil='{id}';";
+                }
+                else if (ch1 == false && ch2 == true && ch3 == true)
+                {
+                    cmd.CommandText = $"Update perfiles set nom_C='{txt2}',ap_C='{txt3}' Where id_perfil='{id}';";
+                }
+                else if (ch1 == false && ch2 == false && ch3 == true)
+                {
+                    cmd.CommandText = $"Update perfiles set ap_C='{txt3}' Where id_perfil='{id}';";
                 }
                 else
                 {
@@ -210,7 +168,7 @@ namespace Tracking_Comercial.SQL
                 da.UpdateCommand = cmd;
                 if (cmd.ExecuteNonQuery() != -1)
                 {
-                    MessageBox.Show("Los datos del usuario se han actualizado exitosamente.");
+                    MessageBox.Show("Los datos de la empresa se han actualizado exitosamente.");
                 }
             }
             catch (Exception ex)
