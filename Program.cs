@@ -1,6 +1,3 @@
-using System.Configuration;
-using Tracking_Comercial.Ventanas;
-
 namespace Tracking_Comercial
 {
     internal static class Program
@@ -9,7 +6,7 @@ namespace Tracking_Comercial
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.

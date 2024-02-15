@@ -22,6 +22,7 @@ namespace Tracking_Comercial.SQL
                 return false;//se muestra que no se logro concretar la conexion.
             }
         }
+
         public bool desconectado()
         {
             try
@@ -41,6 +42,6 @@ namespace Tracking_Comercial.SQL
                 MessageBox.Show(ex.Message); //se muestra un msg en caso de no encontrar el srv de MySQL
                 return false;
             }
-            }
         }
     }
+}

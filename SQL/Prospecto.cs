@@ -13,10 +13,10 @@ namespace Tracking_Comercial.SQL
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = cc;
                 cmd.CommandText = $"Insert into prospectos(nom_u,con_u) values ('{pros}','{pass}');";
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                da.InsertCommand = cmd;
                 if (cmd.ExecuteNonQuery() != -1)
                 {
-                    MySqlDataAdapter da = new MySqlDataAdapter();
-                    da.InsertCommand = cmd;
                     MessageBox.Show($"El prospecto {pros}. Fue creado con exito");
                 }
             }
@@ -38,12 +38,12 @@ namespace Tracking_Comercial.SQL
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = cc;
                 cmd.CommandText = "Select * From prospectos;";
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                DataTable dt = new DataTable();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
                 if (cmd.ExecuteNonQuery() == -1)
                 {
-                    MySqlDataAdapter da = new MySqlDataAdapter();
-                    DataTable dt = new DataTable();
-                    da.SelectCommand = cmd;
-                    da.Fill(dt);
                     return dt;
                 }
                 else
@@ -62,7 +62,7 @@ namespace Tracking_Comercial.SQL
             }
         }
 
-        public void eliminar(int id,string pros)
+        public void eliminar(int id, string pros)
         {
             try
             {
@@ -70,10 +70,10 @@ namespace Tracking_Comercial.SQL
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = cc;
                 cmd.CommandText = $"Delete from prospectos where id_prospecto={id}";
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                da.DeleteCommand = cmd;
                 if (cmd.ExecuteNonQuery() != -1)
                 {
-                    MySqlDataAdapter da = new MySqlDataAdapter();
-                    da.DeleteCommand = cmd;
                     MessageBox.Show($"El prospecto {pros} fue eliminado con exito");
                 }
             }
@@ -87,7 +87,7 @@ namespace Tracking_Comercial.SQL
             }
         }
 
-        public DataTable? buscar(string campo,string sol) 
+        public DataTable? buscar(string campo, string sol)
         {
             try
             {
@@ -95,12 +95,12 @@ namespace Tracking_Comercial.SQL
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = cc;
                 cmd.CommandText = $"Select * From prospectos Where {campo}='{sol}';";
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                DataTable dt = new DataTable();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
                 if (cmd.ExecuteNonQuery() == -1)
                 {
-                    MySqlDataAdapter da = new MySqlDataAdapter();
-                    DataTable dt = new DataTable();
-                    da.SelectCommand = cmd;
-                    da.Fill(dt);
                     return dt;
                 }
                 else
@@ -119,38 +119,46 @@ namespace Tracking_Comercial.SQL
             }
         }
 
-        
-        public void Actualizar(int cant, string c1, string d1, string c2,string d2, string c3, string d3)
+        public void Actualizar(string id, string txt1, string txt2, bool cb1, bool cb2)
         {
             try
             {
                 conectado();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = cc;
-                if (cant == 1)
+                if (cb1 == true && cb2 == false)
                 {
-                    cmd.CommandText = $"Update prospectos Set {c1}='{d1}';";
-                }else if (cant == 2)
-                {
-                    cmd.CommandText = $"Update prospectos Set {c1}='{d1}',{c2}='{d2}';";
-                }else 
-                {
-                    cmd.CommandText = $"Update prospectos Set {c1}='{d1}',{c2}='{d2}',{c3}='{d3}';";
+                    cmd.CommandText = $"Update prospectos set Con_U='{txt1}' Where Nom_U='{id}';";
                 }
+                else if (cb1 == true && cb2 == true)
+                {
+                    cmd.CommandText = $"Update prospectos set Con_U='{txt1}',Tipo_U='{txt2}' Where Nom_U='{id}';";
+                }
+                else if (cb1 == false && cb2 == true)
+                {
+                    cmd.CommandText = $"Update prospectos set Tipo_U='{txt2}' Where Nom_U='{id}'";
+                }
+                else
+                {
+                    MessageBox.Show("Marque una casilla, por favor.");
+                    desconectado();
+                }
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                da.UpdateCommand = cmd;
                 if (cmd.ExecuteNonQuery() != -1)
                 {
-                    MySqlDataAdapter da = new MySqlDataAdapter();
-                    da.UpdateCommand = cmd;
+                    MessageBox.Show("Los datos del usuario se han actualizado exitosamente.");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }finally
+            }
+            finally
             {
                 mostrar();
                 desconectado();
             }
-        }  
+        }
     }
 }

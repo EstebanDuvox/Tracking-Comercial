@@ -1,11 +1,10 @@
-﻿using System.Data;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Tracking_Comercial.SQL
 {
     internal class Usuario : Conexiones
     { //Heredo la clase de conexiones
-
         public List<string>? listU()
         {
             try

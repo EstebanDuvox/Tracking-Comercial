@@ -4,7 +4,8 @@
     {
         private string _conexion;
 
-        public string Conexion { 
+        public string Conexion
+        {
             get
             { return _conexion; }
             set { _conexion = value; }

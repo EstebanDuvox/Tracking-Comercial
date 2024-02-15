@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             tabControl1 = new TabControl();
+            tpGP = new TabPage();
             tpMP = new TabPage();
             btnBP = new Button();
             cbP = new ComboBox();
@@ -38,7 +39,15 @@
             btnAP = new Button();
             dgP = new DataGridView();
             tpEP = new TabPage();
-            tpGP = new TabPage();
+            groupBox3 = new GroupBox();
+            textBox1 = new TextBox();
+            comboBox1 = new ComboBox();
+            btnBE = new Button();
+            groupBox4 = new GroupBox();
+            btnEE = new Button();
+            btnME = new Button();
+            btnAE = new Button();
+            dataGridView1 = new DataGridView();
             tpP = new TabPage();
             btnBPe = new Button();
             cbPe = new ComboBox();
@@ -48,25 +57,29 @@
             btnAPe = new Button();
             dgPe = new DataGridView();
             tpU = new TabPage();
-            btnBU = new Button();
-            cbU = new ComboBox();
+            groupBox2 = new GroupBox();
             txtBU = new TextBox();
+            cbU = new ComboBox();
+            btnBU = new Button();
+            groupBox1 = new GroupBox();
             btnEU = new Button();
             btnMU = new Button();
             btnAU = new Button();
             dgU = new DataGridView();
             button1 = new Button();
-            groupBox1 = new GroupBox();
-            groupBox2 = new GroupBox();
             tabControl1.SuspendLayout();
             tpMP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgP).BeginInit();
+            tpEP.SuspendLayout();
+            groupBox3.SuspendLayout();
+            groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tpP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgPe).BeginInit();
             tpU.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgU).BeginInit();
-            groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgU).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -82,6 +95,15 @@
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(784, 459);
             tabControl1.TabIndex = 1;
+            // 
+            // tpGP
+            // 
+            tpGP.Location = new Point(4, 24);
+            tpGP.Name = "tpGP";
+            tpGP.Size = new Size(776, 431);
+            tpGP.TabIndex = 2;
+            tpGP.Text = "Gestion";
+            tpGP.UseVisualStyleBackColor = true;
             // 
             // tpMP
             // 
@@ -166,6 +188,9 @@
             // 
             // tpEP
             // 
+            tpEP.Controls.Add(groupBox3);
+            tpEP.Controls.Add(groupBox4);
+            tpEP.Controls.Add(dataGridView1);
             tpEP.Location = new Point(4, 24);
             tpEP.Name = "tpEP";
             tpEP.Padding = new Padding(3);
@@ -174,14 +199,94 @@
             tpEP.Text = "Estados";
             tpEP.UseVisualStyleBackColor = true;
             // 
-            // tpGP
+            // groupBox3
             // 
-            tpGP.Location = new Point(4, 24);
-            tpGP.Name = "tpGP";
-            tpGP.Size = new Size(776, 431);
-            tpGP.TabIndex = 2;
-            tpGP.Text = "Gestion";
-            tpGP.UseVisualStyleBackColor = true;
+            groupBox3.Controls.Add(textBox1);
+            groupBox3.Controls.Add(comboBox1);
+            groupBox3.Controls.Add(btnBE);
+            groupBox3.Location = new Point(492, 3);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(278, 70);
+            groupBox3.TabIndex = 18;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Buscar";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(58, 42);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(216, 23);
+            textBox1.TabIndex = 11;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(58, 12);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(135, 23);
+            comboBox1.TabIndex = 12;
+            // 
+            // btnBE
+            // 
+            btnBE.Location = new Point(199, 11);
+            btnBE.Name = "btnBE";
+            btnBE.Size = new Size(75, 23);
+            btnBE.TabIndex = 13;
+            btnBE.Text = "Buscar";
+            btnBE.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(btnEE);
+            groupBox4.Controls.Add(btnME);
+            groupBox4.Controls.Add(btnAE);
+            groupBox4.Location = new Point(6, 3);
+            groupBox4.Name = "groupBox4";
+            groupBox4.RightToLeft = RightToLeft.Yes;
+            groupBox4.Size = new Size(480, 70);
+            groupBox4.TabIndex = 17;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Gestion";
+            // 
+            // btnEE
+            // 
+            btnEE.Location = new Point(87, 42);
+            btnEE.Name = "btnEE";
+            btnEE.Size = new Size(75, 23);
+            btnEE.TabIndex = 10;
+            btnEE.Text = "Eliminar";
+            btnEE.UseVisualStyleBackColor = true;
+            // 
+            // btnME
+            // 
+            btnME.Location = new Point(6, 42);
+            btnME.Name = "btnME";
+            btnME.Size = new Size(75, 23);
+            btnME.TabIndex = 9;
+            btnME.Text = "Modificar";
+            btnME.UseVisualStyleBackColor = true;
+            // 
+            // btnAE
+            // 
+            btnAE.Location = new Point(6, 12);
+            btnAE.Name = "btnAE";
+            btnAE.Size = new Size(75, 23);
+            btnAE.TabIndex = 8;
+            btnAE.Text = "Agregar";
+            btnAE.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToOrderColumns = true;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(6, 75);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(760, 350);
+            dataGridView1.TabIndex = 16;
             // 
             // tpP
             // 
@@ -276,6 +381,33 @@
             tpU.UseVisualStyleBackColor = true;
             tpU.Click += tpU_Click;
             // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(txtBU);
+            groupBox2.Controls.Add(cbU);
+            groupBox2.Controls.Add(btnBU);
+            groupBox2.Location = new Point(490, 1);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(278, 70);
+            groupBox2.TabIndex = 15;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Buscar";
+            // 
+            // txtBU
+            // 
+            txtBU.Location = new Point(72, 42);
+            txtBU.Name = "txtBU";
+            txtBU.Size = new Size(202, 23);
+            txtBU.TabIndex = 11;
+            // 
+            // cbU
+            // 
+            cbU.FormattingEnabled = true;
+            cbU.Location = new Point(72, 12);
+            cbU.Name = "cbU";
+            cbU.Size = new Size(121, 23);
+            cbU.TabIndex = 12;
+            // 
             // btnBU
             // 
             btnBU.Location = new Point(199, 11);
@@ -286,20 +418,18 @@
             btnBU.UseVisualStyleBackColor = true;
             btnBU.Click += btnBU_Click;
             // 
-            // cbU
+            // groupBox1
             // 
-            cbU.FormattingEnabled = true;
-            cbU.Location = new Point(72, 12);
-            cbU.Name = "cbU";
-            cbU.Size = new Size(121, 23);
-            cbU.TabIndex = 12;
-            // 
-            // txtBU
-            // 
-            txtBU.Location = new Point(72, 42);
-            txtBU.Name = "txtBU";
-            txtBU.Size = new Size(202, 23);
-            txtBU.TabIndex = 11;
+            groupBox1.Controls.Add(btnEU);
+            groupBox1.Controls.Add(btnMU);
+            groupBox1.Controls.Add(btnAU);
+            groupBox1.Location = new Point(4, 1);
+            groupBox1.Name = "groupBox1";
+            groupBox1.RightToLeft = RightToLeft.Yes;
+            groupBox1.Size = new Size(480, 70);
+            groupBox1.TabIndex = 14;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Gestion";
             // 
             // btnEU
             // 
@@ -352,31 +482,6 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(btnEU);
-            groupBox1.Controls.Add(btnMU);
-            groupBox1.Controls.Add(btnAU);
-            groupBox1.Location = new Point(4, 1);
-            groupBox1.Name = "groupBox1";
-            groupBox1.RightToLeft = RightToLeft.Yes;
-            groupBox1.Size = new Size(480, 70);
-            groupBox1.TabIndex = 14;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Gestion";
-            // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(txtBU);
-            groupBox2.Controls.Add(cbU);
-            groupBox2.Controls.Add(btnBU);
-            groupBox2.Location = new Point(490, 1);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(278, 70);
-            groupBox2.TabIndex = 15;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Buscar";
-            // 
             // AppP
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -391,14 +496,19 @@
             tpMP.ResumeLayout(false);
             tpMP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgP).EndInit();
+            tpEP.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tpP.ResumeLayout(false);
             tpP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgPe).EndInit();
             tpU.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgU).EndInit();
-            groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgU).EndInit();
             ResumeLayout(false);
         }
 
@@ -439,5 +549,14 @@
         private Button button1;
         private GroupBox groupBox2;
         private GroupBox groupBox1;
+        private GroupBox groupBox3;
+        private TextBox textBox1;
+        private ComboBox comboBox1;
+        private Button btnBE;
+        private GroupBox groupBox4;
+        private Button btnEE;
+        private Button btnME;
+        private Button btnAE;
+        private DataGridView dataGridView1;
     }
 }
