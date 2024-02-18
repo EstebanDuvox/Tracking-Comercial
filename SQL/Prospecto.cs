@@ -5,14 +5,15 @@ namespace Tracking_Comercial.SQL
 {
     internal class Prospecto : Conexiones
     {
-        public void crear(string pros, string pass)
+        public void crear(string pros, int idc, int idem, string desc, string esp, DateTime tiem, int pres, int ides)/*declaro variables para el prospecto, el id de la empresa, descripcion, especificacion del prospecto, 
+        restriccion de tiempo, economicas, id del estado y documento del cliente.*/
         {
             try
             {
                 conectado();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = cc;
-                cmd.CommandText = $"Insert into prospectos(nom_u,con_u) values ('{pros}','{pass}');";
+                cmd.CommandText = $"Insert into prospectos(Nom_Propecto,id_empresa,desc_P) values ('{pros}','{pass}');";
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.InsertCommand = cmd;
                 if (cmd.ExecuteNonQuery() != -1)
