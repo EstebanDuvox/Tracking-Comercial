@@ -69,46 +69,14 @@ namespace Tracking_Comercial.SQL
             }
         }
 
-        public void Actualizar(string id, string txt1, string txt2, string txt3, bool ch1, bool ch2, bool ch3)
+        public void Actualizar(string id, string txt1)
         {
             try
             {
                 conectado();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = cc;
-                if (ch1 == true && ch2 == false && ch3 == false)
-                {
-                    cmd.CommandText = $"Update estados set nom_E='{txt1}' Where id_perfil='{id}';";
-                }
-                else if (ch1 == true && ch2 == true && ch3 == false)
-                {
-                    cmd.CommandText = $"Update estados set nom_E='{txt1}',nom_C='{txt2}' Where id_perfil='{id}';";
-                }
-                else if (ch1 == true && ch2 == false && ch3 == true)
-                {
-                    cmd.CommandText = $"Update estados set nom_E'{txt1}',ap_C='{txt3}' Where id";
-                }
-                else if (ch1 == true && ch2 == true && ch3 == true)
-                {
-                    cmd.CommandText = $"Update estados set nom_E='{txt1}',nom_C='{txt2}',ap_C='{txt3}' Where id_perfil='{id}';";
-                }
-                else if (ch1 == false && ch2 == true && ch3 == false)
-                {
-                    cmd.CommandText = $"Update estados set nom_C='{txt2}' Where id_perfil='{id}';";
-                }
-                else if (ch1 == false && ch2 == true && ch3 == true)
-                {
-                    cmd.CommandText = $"Update estados set nom_C='{txt2}',ap_C='{txt3}' Where id_perfil='{id}';";
-                }
-                else if (ch1 == false && ch2 == false && ch3 == true)
-                {
-                    cmd.CommandText = $"Update estados set ap_C='{txt3}' Where id_perfil='{id}';";
-                }
-                else
-                {
-                    MessageBox.Show("Marque una casilla, por favor.");
-                    desconectado();
-                }
+                cmd.CommandText = $"Update estados set estado='{txt1}' Where id_estado='{id}';";
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.UpdateCommand = cmd;
                 if (cmd.ExecuteNonQuery() != -1)

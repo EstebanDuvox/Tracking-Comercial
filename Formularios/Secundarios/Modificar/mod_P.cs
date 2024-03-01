@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Tracking_Comercial.SQL;
+﻿using Tracking_Comercial.SQL;
 
 namespace Tracking_Comercial.Formularios.Secundarios
 {
@@ -28,19 +18,30 @@ namespace Tracking_Comercial.Formularios.Secundarios
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            Usuario u = new Usuario();
-            u.modificar(cbU.Text, txtC.Text, cbTU.Text, chC.Checked, chTU.Checked);
+            Prospecto u = new Prospecto();
+            int x = int.Parse(txtP.Text);
+            u.Actualizar(cbU.Text, txtD.Text,txtE.Text,dtP.Text,x, chD.Checked, chE.Checked,chF.Checked,chP.Checked);
             this.Close();
         }
 
         private void chC_CheckedChanged(object sender, EventArgs e)
         {
-            txtC.Enabled = true;
+            txtD.Enabled = true;
         }
 
         private void chTU_CheckedChanged(object sender, EventArgs e)
         {
-            cbTU.Enabled = true;
+            txtE.Enabled = true;
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            dtP.Enabled = true;
+        }
+
+        private void chP_CheckedChanged(object sender, EventArgs e)
+        {
+            txtP.Enabled = true;    
         }
     }
 }

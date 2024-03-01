@@ -1,6 +1,6 @@
 ﻿namespace Tracking_Comercial.Formularios.Secundarios
 {
-    partial class mod_P
+    partial class mod_U
     {
         /// <summary>
         /// Required designer variable.
@@ -44,6 +44,7 @@
             txtC.Enabled = false;
             txtC.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtC.Location = new Point(232, 140);
+            txtC.MaxLength = 25;
             txtC.Name = "txtC";
             txtC.Size = new Size(121, 26);
             txtC.TabIndex = 1;
@@ -150,7 +151,7 @@
             Controls.Add(txtC);
             MaximizeBox = false;
             Name = "mod_U";
-            Text = "mod_U";
+            Text = "Modificar Usuario";
             ResumeLayout(false);
             PerformLayout();
         }

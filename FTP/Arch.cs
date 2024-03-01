@@ -3,7 +3,7 @@ using Tracking_Comercial.FTP;
 
 namespace Tracking_Comercial.Filezilla
 {
-    internal class Archivos : ConexionF
+    internal class Arch : ConexionF
     {
         private FtpClient client;
 
@@ -63,5 +63,19 @@ namespace Tracking_Comercial.Filezilla
                 desconectado();
             }
         }
+        //public List<string> lista(string pros)
+        //{
+        //    try
+        //    {
+        //        conectado();
+        //        return client.GetListing($".\\{pros}");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //        return null;
+        //    }
+        //    finally { desconectado() ; }
+        //}
     }
 }

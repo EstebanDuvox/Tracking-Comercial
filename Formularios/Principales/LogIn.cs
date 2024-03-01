@@ -1,3 +1,4 @@
+using Google.Protobuf.WellKnownTypes;
 using System.Data;
 using Tracking_Comercial.SQL;
 using Tracking_Comercial.Ventanas;
@@ -30,17 +31,20 @@ namespace Tracking_Comercial
         {
             DataTable dt = new DataTable();
             Usuario funcion = new Usuario();
-            string user, pass;
+            string user, pass, tipo;
+            int emp;
             dt = funcion.ingresar(u,p);
             dt.MinimumCapacity = 0;
             user = dt.Rows[0].Field<string>("nom_u");
             pass = dt.Rows[0].Field<string>("con_u");
+            tipo = dt.Rows[0].Field<string>("tipo_u");
+            emp = dt.Rows[0].Field<int>("id_perfil");
             if (u == user && p == pass)
             {
                 this.Hide();
                 txtU.Clear();
                 txtC.Clear();
-                AppP a = new AppP();
+                AppP a = new AppP(tipo,emp);
                 a.Show();
             }
             else if (u != user || p != pass)

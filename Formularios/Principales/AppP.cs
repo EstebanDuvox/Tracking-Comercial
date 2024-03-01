@@ -1,14 +1,19 @@
 ﻿using System.Collections.Specialized;
 using System.Data;
+using Tracking_Comercial.Formularios.Secundarios;
 using Tracking_Comercial.SQL;
 
 namespace Tracking_Comercial.Ventanas
 {
     public partial class AppP : Form
     {
-        public AppP()
+        public AppP(string tipo,int emp)
         {
             InitializeComponent();
+            if (tipo != "Comercial")
+            {
+                tabControl1.Enabled = true;
+            }
         }
 
         private void app_Closing(object sender, EventArgs e)
@@ -41,6 +46,18 @@ namespace Tracking_Comercial.Ventanas
         {
             LogIn.ActiveForm.Show();
             this.Close();
+        }
+
+        private void btnVA_Click(object sender, EventArgs e)
+        {
+            Archivos a = new Archivos();
+            a.Show();
+        }
+
+        private void btnMP_Click(object sender, EventArgs e)
+        {
+            mod_P mod = new mod_P();
+            mod.Show();
         }
     }
 }

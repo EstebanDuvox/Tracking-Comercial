@@ -31,6 +31,7 @@
             tabControl1 = new TabControl();
             tpGP = new TabPage();
             tpMP = new TabPage();
+            btnVA = new Button();
             btnBP = new Button();
             cbP = new ComboBox();
             txtBP = new TextBox();
@@ -84,6 +85,7 @@
             // 
             // tabControl1
             // 
+            tabControl1.Appearance = TabAppearance.Buttons;
             tabControl1.Controls.Add(tpGP);
             tabControl1.Controls.Add(tpMP);
             tabControl1.Controls.Add(tpEP);
@@ -98,15 +100,16 @@
             // 
             // tpGP
             // 
-            tpGP.Location = new Point(4, 24);
+            tpGP.Location = new Point(4, 27);
             tpGP.Name = "tpGP";
-            tpGP.Size = new Size(776, 431);
+            tpGP.Size = new Size(776, 428);
             tpGP.TabIndex = 2;
             tpGP.Text = "Gestion";
             tpGP.UseVisualStyleBackColor = true;
             // 
             // tpMP
             // 
+            tpMP.Controls.Add(btnVA);
             tpMP.Controls.Add(btnBP);
             tpMP.Controls.Add(cbP);
             tpMP.Controls.Add(txtBP);
@@ -114,13 +117,24 @@
             tpMP.Controls.Add(btnMP);
             tpMP.Controls.Add(btnAP);
             tpMP.Controls.Add(dgP);
-            tpMP.Location = new Point(4, 24);
+            tpMP.Location = new Point(4, 27);
             tpMP.Name = "tpMP";
             tpMP.Padding = new Padding(3);
-            tpMP.Size = new Size(776, 431);
+            tpMP.Size = new Size(776, 428);
             tpMP.TabIndex = 0;
             tpMP.Text = "Prospecto";
             tpMP.UseVisualStyleBackColor = true;
+            // 
+            // btnVA
+            // 
+            btnVA.Font = new Font("Yu Gothic UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnVA.Location = new Point(89, 7);
+            btnVA.Name = "btnVA";
+            btnVA.Size = new Size(75, 23);
+            btnVA.TabIndex = 7;
+            btnVA.Text = "Ver archivos";
+            btnVA.UseVisualStyleBackColor = true;
+            btnVA.Click += btnVA_Click;
             // 
             // btnBP
             // 
@@ -163,6 +177,7 @@
             btnMP.TabIndex = 2;
             btnMP.Text = "Modificar";
             btnMP.UseVisualStyleBackColor = true;
+            btnMP.Click += btnMP_Click;
             // 
             // btnAP
             // 
@@ -191,10 +206,10 @@
             tpEP.Controls.Add(groupBox3);
             tpEP.Controls.Add(groupBox4);
             tpEP.Controls.Add(dataGridView1);
-            tpEP.Location = new Point(4, 24);
+            tpEP.Location = new Point(4, 27);
             tpEP.Name = "tpEP";
             tpEP.Padding = new Padding(3);
-            tpEP.Size = new Size(776, 431);
+            tpEP.Size = new Size(776, 428);
             tpEP.TabIndex = 1;
             tpEP.Text = "Estados";
             tpEP.UseVisualStyleBackColor = true;
@@ -297,9 +312,9 @@
             tpP.Controls.Add(btnMPe);
             tpP.Controls.Add(btnAPe);
             tpP.Controls.Add(dgPe);
-            tpP.Location = new Point(4, 24);
+            tpP.Location = new Point(4, 27);
             tpP.Name = "tpP";
-            tpP.Size = new Size(776, 431);
+            tpP.Size = new Size(776, 428);
             tpP.TabIndex = 4;
             tpP.Text = "Perfiles";
             tpP.UseVisualStyleBackColor = true;
@@ -373,9 +388,9 @@
             tpU.Controls.Add(groupBox2);
             tpU.Controls.Add(groupBox1);
             tpU.Controls.Add(dgU);
-            tpU.Location = new Point(4, 24);
+            tpU.Location = new Point(4, 27);
             tpU.Name = "tpU";
-            tpU.Size = new Size(776, 431);
+            tpU.Size = new Size(776, 428);
             tpU.TabIndex = 3;
             tpU.Text = "Usuarios";
             tpU.UseVisualStyleBackColor = true;
@@ -558,5 +573,6 @@
         private Button btnME;
         private Button btnAE;
         private DataGridView dataGridView1;
+        private Button btnVA;
     }
 }
