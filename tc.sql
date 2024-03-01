@@ -54,7 +54,7 @@ CREATE TABLE `perfiles` (
 
 CREATE TABLE `prospectos` (
   `prospecto` varchar(30) NOT NULL,
-  `id_perfil` int(10) UNSIGNED NOT NULL,
+  `id_perfil` int(10) UNSIGNED ,
   `descr_nec_p` varchar(100) NOT NULL,
   `esp_tec_sol_c` varchar(100) NOT NULL,
   `fecha_lim` date NOT NULL,
