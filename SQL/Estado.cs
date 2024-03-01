@@ -3,7 +3,7 @@ using System.Data;
 
 namespace Tracking_Comercial.SQL
 {
-    internal class Estado : Conexiones
+    internal class Estado : ConexionS
     {
         public DataTable? mostrar()
         {
@@ -34,42 +34,6 @@ namespace Tracking_Comercial.SQL
             finally
             {
                 desconectado();
-            }
-        }
-
-        public void subar(int id)
-        {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                string fileContent;
-                openFileDialog.InitialDirectory = "c:\\";
-                openFileDialog.Filter = "odt files (*.odt)|*.odt|doc files (*.doc)|*.doc|docx files (*.docx)|*.docx|pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
-                openFileDialog.FilterIndex = 5;
-                openFileDialog.RestoreDirectory = true;
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    var fileStream = openFileDialog.OpenFile();
-                    using (StreamReader reader = new StreamReader(fileStream))
-                    {
-                        fileContent = reader.ReadToEnd();
-                        try
-                        {
-                            conectado();
-                            MySqlCommand cmd = new MySqlCommand();
-                            cmd.Connection = cc;
-                            cmd.CommandText = $"Update set ar_E='{fileContent}' From estados Where id_estado={id}";
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
-                        finally
-                        {
-                            desconectado();
-                        }
-                    }
-                }
             }
         }
 

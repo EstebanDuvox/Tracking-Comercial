@@ -3,8 +3,38 @@ using System.Data;
 
 namespace Tracking_Comercial.SQL
 {
-    internal class Prospecto : Conexiones
+    internal class Prospecto : ConexionS
     {
+        public List<string>? listP()
+        {
+            try
+            {
+                conectado();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = cc;
+                cmd.CommandText = "Select Pros from prospectos";
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                DataTable dt = new DataTable();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                List<string> lu = dt.AsEnumerable().Select(x => x[0].ToString()).ToList();
+                if (cmd.ExecuteNonQuery() == -1)
+                {
+                    return lu;
+                }
+                else { return null; }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                desconectado();
+            }
+        }
+
         public void crear(string pros, string pass)
         {
             try

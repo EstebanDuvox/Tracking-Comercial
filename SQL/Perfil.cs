@@ -3,7 +3,7 @@ using System.Data;
 
 namespace Tracking_Comercial.SQL
 {
-    internal class Perfil : Conexiones
+    internal class Perfil : ConexionS
     {
         public void crear(string emp, string nomc, string apc)
         {

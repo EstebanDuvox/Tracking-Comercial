@@ -1,9 +1,11 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Data;
+using Miracle.FileZilla.Api;
+using System.Net.Http.Json;
 
 namespace Tracking_Comercial.SQL
 {
-    internal class Usuario : Conexiones
+    internal class Usuario : ConexionS
     { //Heredo la clase de conexiones
         public List<string>? listU()
         {
@@ -66,7 +68,6 @@ namespace Tracking_Comercial.SQL
                 desconectado();
             }
         }
-
         public void crear(string user, string pass)
         {
             try

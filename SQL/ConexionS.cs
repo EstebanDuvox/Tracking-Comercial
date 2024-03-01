@@ -2,7 +2,7 @@
 
 namespace Tracking_Comercial.SQL
 {
-    internal class Conexiones : Para
+    internal class ConexionS : Para
     {
         protected MySqlConnection cc;// declaro interfaz de conexion para MySQL
 
